@@ -122,6 +122,11 @@ function handleListDelete (event) {
   }
 }
 
+function handleThreadShortcut (combo) {
+  const filter = () => $('#mail .v-Thread')
+  return handleShortcut(combo, filter)
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
 // selection
 // ---------------------------------------------------------------------------------------------------------------------
@@ -296,6 +301,9 @@ const handlers = {
   AltArrowDown: handleShowFolder(1),
   AltArrowLeft: handleToggleFolder(-1),
   AltArrowRight: handleToggleFolder(1),
+
+  // thread view
+  Escape: handleThreadShortcut('U')
 }
 
 document.addEventListener('keydown', function (event) {
